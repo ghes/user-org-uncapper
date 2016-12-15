@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         GitHub User Organization List Uncapper
 // @namespace    https://github.com/ghes
-// @version      0.1.0
+// @version      0.1.1
 // @description  Display a user's public organizations beyond the 25 GitHub now limits a user page to
 // @author       Stuart P. Bentley (@stuartpb)
 // @match        https://github.com/*
@@ -61,7 +61,8 @@
           var cachedUserOrgsArray = JSON.parse(cachedUserOrgsJson);
           addNewOrgs(cachedUserOrgsArray, userOrgAvatars);
         }
-        fetch('https://api.github.com/' + apiPath).then(function (res) {
+        var apiEndpoint = 'https://api.github.com/' + apiPath + '?per_page=100';
+        fetch(apiEndpoint).then(function (res) {
           return res.text();
         }).then(function (jsonStr) {
           // TODO: remove any organizations we erroneously added from cache
