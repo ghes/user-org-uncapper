@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         GitHub User Organization List Uncapper
 // @namespace    https://github.com/ghes
-// @version      0.1.1
+// @version      0.2.0
 // @description  Display a user's public organizations beyond the 25 GitHub now limits a user page to
 // @author       Stuart P. Bentley (@stuartpb)
 // @match        https://ghes.github.io/api/oauth/
